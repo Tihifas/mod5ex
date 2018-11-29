@@ -56,11 +56,17 @@
     <Compile Include="Controls\AssignStudentDialog.xaml.cs">
       <DependentUpon>AssignStudentDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ChangePasswordDialog.xaml.cs">
+      <DependentUpon>ChangePasswordDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\GradeDialog.xaml.cs">
       <DependentUpon>GradeDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\StudentDialog.xaml.cs">
       <DependentUpon>StudentDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\StudentForm.xaml.cs">
+      <DependentUpon>StudentForm.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\DataSource.cs" />
     <Compile Include="Services\SessionContext.cs" />
@@ -77,6 +83,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\ChangePasswordDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Controls\GradeDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -84,6 +94,10 @@
     <Page Include="Controls\StudentDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\StudentForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

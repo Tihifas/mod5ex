@@ -17,11 +17,17 @@ namespace GradesPrototype.Data
         protected string _password = Guid.NewGuid().ToString(); // Generate a random password by default
         public string Password
         {
-            set {
-                if (!SetPassword(value))
+            set
+            {
+                bool SetPasswordSuccess = SetPassword(value);
+                if (!SetPasswordSuccess)
                 {
                     throw new ArgumentException();
                 };
+            }
+            get
+            {
+                return _password;
             }
         }
         public bool VerifyPassword(string pass)
@@ -288,6 +294,21 @@ namespace GradesPrototype.Data
             FirstName = String.Empty;
             LastName = String.Empty;
             Class = String.Empty;
+        }
+
+        public override bool SetPassword(string password)
+        {
+            Match numericMatch = Regex.Match(password, @".*[0-9]+.*[0-9]+.*");
+            if (password.Length >= 8 && numericMatch.Success)
+            {
+                _password = password;
+                return true;
+            }
+            else
+            {
+                //Exception is thrown in User class
+                return false;
+            }
         }
 
         // Enroll a student in the class for this teacher

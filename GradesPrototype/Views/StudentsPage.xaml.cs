@@ -90,7 +90,12 @@ namespace GradesPrototype.Views
                     Student newStudent = new Student();
                     newStudent.FirstName = sd.firstName.Text;
                     newStudent.LastName = sd.lastName.Text;
-                    newStudent.Password = sd.password.Text;
+                    //newStudent.Password = sd.password.Text;
+                    bool setPasswordSuccess = newStudent.SetPassword(sd.password.Text);
+                    if (!setPasswordSuccess)
+                    {
+                        throw new Exception("NewStudent_Click: !setPasswordSuccess");
+                    }
 
                     // Generate the UserName property - lastname with the initial letter of the first name all converted to lowercase
                     newStudent.UserName = (newStudent.LastName + newStudent.FirstName.Substring(0, 1)).ToLower();
